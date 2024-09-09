@@ -9,6 +9,13 @@ public class LogicScript : MonoBehaviour
    public int playerScore;
    public Text scoreText;
    public GameObject gameOverScreen;
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     
     [ContextMenu("IncreaseScore")]
     public void addScore(int scoreToAdd)
